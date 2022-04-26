@@ -1,9 +1,6 @@
 <h1 align="center">yolo-tensorrt</h1>
 
 <div align="center">Interface for TensorRT engines inference along with an example of YOLOv4 engine being used.</div>
-<div align="center">
-  <img src="">
-</div>
 
 <br />
 <div align="center">
