@@ -1,6 +1,9 @@
-# yolo-tensorrt
+<h1 align="center">yolo-tensorrt</h1>
 
-Interface for TensorRT engines inference along with an example of YOLOv4 engine being used.
+<div align="center">Interface for TensorRT engines inference along with an example of YOLOv4 engine being used.</div>
+<div align="center">
+  <img src="">
+</div>
 
 <br />
 <div align="center">
@@ -21,9 +24,9 @@ docker pull nvcr.io/nvidia/tensorrt:22.03-py3
 ```
 
 The example uses the opencv library, which can be built using the official
-instructions which can be found in the <a href="https://docs.opencv.org/4.x/d7/d9f/tutorial_linux_install.html">official
-docs</a>. Building it even with 8-core-cpu takes quite long so I'd advise to
-install the binary from conda-forge.
+instructions which can be found in the 
+<a href="https://docs.opencv.org/4.x/d7/d9f/tutorial_linux_install.html">official docs</a>.
+Building it even with 8-core-cpu takes quite long so I'd advise to install the binary from conda-forge.
 
 ```
 conda install -y -c conda-forge/label/gcc7 opencv
@@ -57,3 +60,6 @@ yolo = YOLO(trt.Logger())
 img = cv2.imread('some_img.png')
 labels, confidences, bboxes = yolo(img)
 ```
+### License
+
+<a href="https://github.com/piotrostr/blob/HEAD/LICENSE">MIT</a>©
