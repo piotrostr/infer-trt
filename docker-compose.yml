@@ -1,0 +1,19 @@
+version: "3"
+services:
+  runner:
+    build: .
+    platform: linux/amd64
+    working_dir: /code
+    volumes:
+      - ./:/code
+    ipc: host
+    ulimits:
+      memlock: -1
+      stack: 67108864
+    command: python yolo.py
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              capabilities: [gpu]
