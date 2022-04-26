@@ -59,4 +59,4 @@ labels, confidences, bboxes = yolo(img)
 ```
 ### License
 
-<a href="https://github.com/piotrostr/blob/HEAD/LICENSE">MIT</a>©
+<a href="https://github.com/piotrostr/yolo-tensorrt/blob/master/LICENSE">MIT</a>©
