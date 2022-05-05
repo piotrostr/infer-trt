@@ -1,18 +1,16 @@
-<h1 align="center">yolo-tensorrt</h1>
+# infer-trt
 
-<div align="center">Interface for TensorRT engines inference along with an example of YOLOv4 engine being used.</div>
+Interface for TensorRT engines inference along with an example of YOLOv4 engine being used.
 
-<br />
-<div align="center">
-  <img width="500" src="https://user-images.githubusercontent.com/63755291/165267626-1d2ddeb7-bf57-4640-ac33-7f8b3a9bf72d.png">
-</div>
+
+<img width="500" src="https://user-images.githubusercontent.com/63755291/165267626-1d2ddeb7-bf57-4640-ac33-7f8b3a9bf72d.png">
 
 ### System Requirements
 
 - amd64/linux architecture
 - Nvidia GPU with Tensor cores
 
-### Usage
+### Setup
 
 Installation is quite complex so it is adviced to use the pre-build nvcr.io TensorRT container.
 
@@ -27,6 +25,14 @@ Building it even with 8-core-cpu takes quite long so I'd advise to install the b
 
 ```
 conda install -y -c conda-forge/label/gcc7 opencv
+```
+
+### Usage
+
+Normally, the `yolo.onnx` weights will probably be a result of training, if using PyTorch or TF2 it is easy to make an ONNX export. For the sake of this example, pre-trained weights can be curled or wget'd from the ONNX repo.
+
+```
+curl -o yolo.onnx https://github.com/onnx/models/blob/main/vision/object_detection_segmentation/yolov3/model/yolov3-10.onnx
 ```
 
 In order to obtain the TensorRT engine for a given model the `trtexec` tool can
