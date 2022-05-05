@@ -11,8 +11,13 @@ Interface for TensorRT engines inference along with an example of YOLOv4 engine 
 - Nvidia GPU with Tensor cores
 
 ### Setup
+To start one can fork/clone this repo containing the code.
 
-Installation is quite complex so it is adviced to use the pre-build nvcr.io TensorRT container.
+```bash
+git clone https://github.com/piotrostr/infer-trt
+```
+
+TensorRT setup is quite complex so it is adviced to use the pre-build nvcr.io container.
 
 ```bash
 docker pull nvcr.io/nvidia/tensorrt:22.03-py3
