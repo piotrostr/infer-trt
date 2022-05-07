@@ -47,7 +47,8 @@ class TensorRTModel:
         inputs[0].host = img
         for inp in inputs:
             cuda.memcpy_htod_async(inp.device, inp.host, self.stream)
-        self.context.execute_async(bindings=bindings, stream_handle=self.stream.handle)
+        self.context.execute_async(bindings=bindings,
+                                   stream_handle=self.stream.handle)
         for out in outputs:
             cuda.memcpy_dtoh_async(out.host, out.device, self.stream)
         self.stream.synchronize()
@@ -56,7 +57,7 @@ class TensorRTModel:
     def get_engine(self) -> trt.ICudaEngine:
         raise NotImplementedError
 
-    def preprocess(self, img: np.ndarray):
+    def preprocess(self, img: np.ndarray) -> np.ndarray:
         raise NotImplementedError
 
     def postprocess(self, out: list):
